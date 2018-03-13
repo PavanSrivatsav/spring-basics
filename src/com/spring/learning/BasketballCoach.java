@@ -36,4 +36,12 @@ public class BasketballCoach implements Coach {
 		return "Basketball coach : " + fortuneService.getDailyFortune();
 	}
 
+	public void doInitStuff() { // return type should be void or else it wont execute
+		System.out.println("Start of bean");
+	}
+
+	public void doDestroyStuff() { // return type should be void or else it wont execute
+		System.out.println("End of bean");
+	}
+
 }
