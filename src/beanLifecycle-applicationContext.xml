@@ -11,7 +11,7 @@
 
 	</bean>
 
-	<!-- <bean id="prototypeTesting" class="com.spring.learning.BasketballCoach"> 
-		<property name="fortuneService" ref="myFortuneServiceBean" /> </bean> -->
+	<!-- <bean id="prototypeTesting" class="com.spring.learning.BasketballCoach" 
+		init-method="doInitStuff" destroy-method="doDestroyStuff"> </bean> -->
 
 </beans>

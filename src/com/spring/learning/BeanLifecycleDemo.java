@@ -6,34 +6,11 @@ public class BeanLifecycleDemo {
 
 	public static void main(String[] args) {
 
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+				"beanLifecycle-applicationContext.xml");
 
-		Coach singleTonA = context.getBean("singleTonTesting", Coach.class);
-
-		Coach singleTonB = context.getBean("singleTonTesting", Coach.class);
-
-		Boolean sameMemLocation = (singleTonA == singleTonB);
-
-		System.out.println("Diff mem location=>" + sameMemLocation);
-
-		System.out.println("singleTonA=>" + singleTonA);
-		System.out.println("singleTonB=>" + singleTonB);
-
-		context.close();
-
-		context.refresh();
-
-		Coach prototypeA = context.getBean("prototypeTesting", Coach.class);
-
-		Coach prototypeB = context.getBean("prototypeTesting", Coach.class);
-
-		Boolean diffMemLocation = (prototypeA != prototypeB);
-
-		System.out.println("Diff mem location=>" + diffMemLocation);
-
-		System.out.println("prototypeA=>" + prototypeA);
-		System.out.println("prototypeB=>" + prototypeB);
-
+		Coach b = context.getBean("singleTonTesting", Coach.class);
+		System.out.println(b.getDailyWorkout());
 		context.close();
 
 	}
